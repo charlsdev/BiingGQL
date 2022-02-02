@@ -12,10 +12,11 @@ const server = new ApolloServer({
    plugins: [
       ApolloServerPluginLandingPageGraphQLPlayground
       // ApolloServerPluginLandingPageDisabled
-   ]
+   ],
    // context: ({ req, res }) => ({
    //    req, res
    // }),
+   introspection: true,
 });
 
 module.exports = server;
