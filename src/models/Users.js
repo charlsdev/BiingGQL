@@ -26,4 +26,4 @@ const UsuariosSchema = new Schema({
    versionKey: false
 });
 
-module.exports = model('Usuarios', UsuariosSchema);
+module.exports = model(`${process.env.schemaName}`, UsuariosSchema);
