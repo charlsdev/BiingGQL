@@ -5,6 +5,7 @@ const typeDefs = gql`
       boletosCount(pass: String!): String!
       allBoletos(pass: String!): [Usuarios]!
       oneBoleto(pass: String!, num: Int!): resUser!
+      searchVendedor(pass: String!, vend: Vendedores!): String!
    }
 
    type Mutation {
@@ -32,7 +33,19 @@ const typeDefs = gql`
       nombres: String!
       telefono: String!
       numBoleto: String!
-      vendedor: String!
+      vendedor: Vendedores!
+   }
+
+   enum Vendedores {
+      CarlosVP
+      NicolM
+      RashelM
+      ElizaCH
+      DavidV
+      SebastianN
+      XiomaraBP
+      VictorFC
+      MaferL
    }
 `;
 

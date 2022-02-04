@@ -29,7 +29,7 @@ const resolvers = {
                .find()
                .lean()
                .sort({
-                  createdAt: 'desc'
+                  numBoleto: 1
                })
                .exec();
 
@@ -48,7 +48,7 @@ const resolvers = {
                   numBoleto: num
                })
                .lean();
-            console.log(resultB);
+            // console.log(resultB);
 
             if (resultB) {
                resUser = {
@@ -72,6 +72,22 @@ const resolvers = {
             };
                
             return resUser;
+         }
+      },
+
+      searchVendedor: async (root, args) => {
+         const { pass, vend } = args;
+
+         if (await matchPassword(pass)) {
+            const numBol = await usuariosModels
+               .find({
+                  vendedor: vend
+               })
+               .countDocuments();
+
+            return `${vend} vendió ${numBol} boletos...`;
+         } else {               
+            return 'No posees los permisos suficientes...';
          }
       },
    },

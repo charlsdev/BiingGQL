@@ -1,0 +1,98 @@
+## Consultar el número de boletos
+query {
+   boletosCount(pass: "")
+}
+
+## Listar todos los boletos
+query {
+   allBoletos(pass: "") {
+      apellidos
+      nombres
+      telefono
+      numBoleto
+      vendedor
+   }
+}
+
+## Buscar un boleto por el número
+query {
+   oneBoleto(
+      pass: ""
+      num: 10
+   ) {
+      msg
+      User {
+         _id
+         apellidos
+         nombres
+         telefono
+         numBoleto
+         vendedor
+      }
+   }
+}
+
+## Buscar el total de boletos vendidos
+query {
+   searchVendedor (
+      pass: ""
+      vend: CarlosVP
+   )
+}
+
+## Añadir un nuevo boleto
+mutation {
+   addNewBoleto(
+      pass: ""
+      data: {
+         apellidos: "",
+         nombres: "",
+         telefono: "",
+         numBoleto: "",
+         vendedor: RashelM
+      }
+   ) {
+      msg
+      User {
+         _id
+         apellidos
+         nombres
+         telefono
+         numBoleto
+         vendedor
+      }
+   }
+}
+
+## Editar un boleto por el número
+mutation {
+   editBoleto(
+      pass: "",
+      numB: 300,
+      data: {
+         apellidos: "",
+         nombres: "",
+         telefono: "",
+         numBoleto: "",
+         vendedor: RashelM
+      }
+   ) {
+      msg
+      User {
+         _id
+         apellidos
+         nombres
+         telefono
+         numBoleto
+         vendedor
+      }
+   }
+}
+
+## Eliminar un boleto por el número
+mutation {
+   deleteBoleto(
+      pass: ""
+      numB: 15
+   )
+}
