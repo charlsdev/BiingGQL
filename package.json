@@ -14,13 +14,13 @@
       "apollo-server": "^3.6.2",
       "apollo-server-core": "^3.6.2",
       "bcryptjs": "^2.4.3",
-      "dotenv": "^14.3.2",
-      "graphql": "^16.3.0",
-      "mongoose": "^6.4.6",
-      "nanoid": "^3.2.0"
+      "dotenv": "^16.0.3",
+      "graphql": "^16.6.0",
+      "mongoose": "^6.9.1",
+      "nanoid": "^4.0.1"
    },
    "devDependencies": {
-      "eslint": "^8.8.0",
-      "nodemon": "^2.0.15"
+      "eslint": "^8.34.0",
+      "nodemon": "^2.0.20"
    }
 }
